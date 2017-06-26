@@ -10,6 +10,11 @@ var Rezart = (function() {
     },
 
     owl: function() {
+      $('.owl-carousel').owlCarousel({
+        items: 1,
+        dots: !0,
+        loop: !0
+      })
     },
 
     sandwitch: function() {

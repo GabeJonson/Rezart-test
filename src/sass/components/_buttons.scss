@@ -1,0 +1,20 @@
+.btn {
+  @include size(100%);
+  @include max-size(140px null);
+  padding: 15px 0;
+  font: {
+    family: 'bree_serif';
+    weight: bold;
+  }
+  color: $dark-blue;
+  background-color: $white;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  display: block;
+  @include transition;
+
+  &-white:hover {
+    color: $white;
+    background-color: $dark-blue;
+  }
+}

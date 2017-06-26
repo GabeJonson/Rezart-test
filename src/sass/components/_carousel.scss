@@ -1,0 +1,63 @@
+.slider {
+  @include mobile { padding-top: 80px; }
+  @include tablet { padding-top: 140px; }
+
+  .item {
+    padding-bottom: 40px;
+    color: $white;
+    background: {
+      size: cover;
+      position: center;
+      repeat: no-repeat;
+    }
+  }
+
+  h2 {
+    margin-bottom: 35px;
+    font-family: 'bree_serif';
+
+    @include mobile {
+      margin-top: 50px;
+      @include font(32px, 32px);
+    }
+
+    @include tablet {
+      margin-top: 100px;
+      @include font(64px, 64px);
+    }
+  }
+
+  p {
+    margin-bottom: 35px;
+    font-family: 'ubuntu';
+    @include font(14px, 24px);
+  }
+
+  .btn {
+    @include mobile { margin-bottom: 40px; }
+    @include tablet { margin-bottom: 85px; }
+  }
+
+  .owl-dots {
+    margin-top: -34px;
+    display: flex;
+    flex: {
+      direction: row;
+      wrap: wrap;
+    }
+    justify-content: center;
+    position: relative;
+
+    .owl-dot {
+      @include size(17px);
+      background-color: transparent;
+      border: 3px solid $white;
+      border-radius: 50%;
+      @include transition;
+
+      &:not(:nth-last-of-type(1)) { margin-right: 10px; }
+
+      &.active { background-color: $white; }
+    }
+  }
+}
