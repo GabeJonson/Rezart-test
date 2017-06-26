@@ -11,3 +11,10 @@ mixin list-link(href, text, linkClass)
 			a(href=href, class=linkClass)= text
 		else 
 			a(href=href)= text
+
+mixin blocks(blocks)
+	each item in blocks
+		.grid_4.text-center.grid_12-xs
+			img(src=`${imgPath}${item.image}.png`)
+			h3.h3= item.heading
+			p= item.text

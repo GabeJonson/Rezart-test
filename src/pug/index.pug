@@ -11,3 +11,25 @@ block content
           h2.h2 This Template is Awesome!
           p In has brute virtute, mundi facete perfecto ius ne. Cu tota evertitur necessitatibus nec. Ei quo rebum zril electram, accusata iracundia ei his. Ad qui recusabo deseruisse, cu per odio nihil. Eu vide mucius mei. Maiorum tractatos instructior ut eos, graece graecis vix an, consul impetus mediocrem an his. Possit pericula argumentum vix ex.
           a.btn.btn-white.text-uppercase.text-center(href='#') read more
+          
+  .presentation.container-fluid
+    +blocks(blocks)
+    
+  .recent
+    .container-fluid
+      h2.h2.text-uppercase.text-center recent templates
+      small.text-center Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. 
+      
+      .filter
+        .grid_12.text-container.text-center
+          each item, index in filter
+            if index == 0
+              a.active.filter-item.text-uppercase(href=`#${item}`)= item
+            else
+              a.filter-item.text-uppercase(href=`#${item}`)= item
+              
+        .grid_12.filter-items-container
+          -for(var i = 1; i <= 6; i++)
+            +img(`filter_${i}.jpg`)
+        
+      a.btn.btn-white.text-uppercase.text-center(href='#') show more

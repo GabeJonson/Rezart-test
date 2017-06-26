@@ -39,7 +39,10 @@
   }
 
   .owl-dots {
-    margin-top: -34px;
+    margin: {
+      top: -34px;
+      bottom: 34px;
+    }
     display: flex;
     flex: {
       direction: row;

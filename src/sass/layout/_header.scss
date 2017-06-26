@@ -31,7 +31,6 @@ header {
 }
 
 .nav {
-	@include size(null 40px);
 	display: flex;
 	flex: {
 		direction: row;
@@ -50,6 +49,7 @@ header {
 	}
 
 	@include tablet {
+		@include size(auto);
 		padding-right: 0;
 		background-color: transparent;
 		position: static;
