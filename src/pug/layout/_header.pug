@@ -1,1 +1,19 @@
-header
+include ../utils/_mixins
+
+header.container-fluid
+  .grid_6.grid_12-xs
+    a.logo(href='#')
+      i.fa.fa-rocket
+      span.text-uppercase colorful flat
+      
+  .grid_6.text-right
+    .sandwitch.hidden-sm
+      .top
+      .middle
+      .bottom
+        
+    ul.nav.hidden-xs
+      +list-link('#', 'Home')
+      +list-link('#', 'Services')
+      +list-link('#', 'Portfolio')
+  

@@ -56,6 +56,13 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin font($size: 16px, $line: 16px){
+  font-size: $size;
+  line-height: $line;
+}
+
+@mixin transition($timing: 0.3s, $items: all, $fnc: ease) { transition: $items $timing $fnc; }
+
 @mixin clear {
   &:after {
     content: '';

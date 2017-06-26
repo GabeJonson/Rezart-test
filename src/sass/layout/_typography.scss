@@ -1,7 +1,17 @@
-// fonts
+@font-face {
+  font-family: 'bree_serif';
+  src: url('#{$font-path}breeserif-regular-webfont.woff2') format('woff2'),
+       url('#{$font-path}breeserif-regular-webfont.woff') format('woff'),
+       url('#{$font-path}breeserif-regular-webfont.svg#bree_serifregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
-// font
-@each $size in $heading-sizes {
-	$key: index($heading-sizes, $size);
-	h#{$key}, .h#{$key} { font-size: rem($size); }
+@font-face {
+    font-family: 'ubuntu';
+    src: url('#{$font-path}ubuntu-regular-webfont.woff2') format('woff2'),
+         url('#{$font-path}ubuntu-regular-webfont.woff') format('woff'),
+         url('#{$font-path}ubuntu-regular-webfont.svg#ubunturegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }

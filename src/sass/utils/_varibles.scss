@@ -1,5 +1,7 @@
 // color
-
+$white: #fff;
+$black: #000;
+$dark-blue: #3a494c;
 
 // breakpoints
 $xs:  max-width 768px !default;
@@ -7,13 +9,6 @@ $sm:  min-width 768px !default;
 $md:  min-width 992px !default;
 $lg:  min-width 1200px !default;
 $xlg: min-width 1600px !default;
-
-// media
-$mobile-font:       16px;
-$tablet-font:       16px;
-$tablet-land-font:  16px;
-$desktop-font:      16px;
-$desktop-wild-font: 16px;
 
 // fonts
 $font-path: '../fonts/';

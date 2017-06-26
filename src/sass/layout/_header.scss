@@ -1,3 +1,68 @@
 header {
-	
+	position: fixed;
+	@include horizontal-center;
+
+	@include mobile {
+		padding: {
+			top: 10px;
+			bottom: 10px
+		}
+	}
+
+	@include tablet {
+		padding: {
+			top: 50px;
+			bottom: 50px
+		}
+	}
+
+	.logo {
+		color: $dark-blue;
+
+		@include mobile { @include font(30px, 30px); }
+
+		@include tablet { @include font(40px, 40px); }
+
+		.fa { margin-right: 10px; }
+
+		span { font-family: 'bree_serif'; }
+	}
+}
+
+.nav {
+	@include size(null 40px);
+	display: flex;
+	flex: {
+		direction: row;
+		wrap: wrap;
+	}
+	justify-content: flex-end;
+	align-items: center;
+
+	@include mobile {
+		padding-right: 20px;
+		position: fixed;
+		top: 50px;
+		right: -30px;
+	}
+
+	@include tablet {
+		padding-right: 0;
+		position: static;
+	}
+
+	li {
+		@include tablet {
+			&:not(:nth-last-of-type(1)) { margin-right: 30px; }
+		}
+
+		a {
+			@include font(18px, 40px);
+			font-family: 'ubuntu';
+			color: $dark-blue;
+			@include transition;
+
+			&:hover { color: $white; }
+		}
+	}
 }

@@ -28,12 +28,22 @@ figure { margin: 0; }
   &uppercase { text-transform: uppercase; }
 }
 
-.hidden-sm {
-  @include mobile {
-    display: block;
-  }
+.hidden {
+	&-xs {
+		@include mobile { display: none; }
 
-  @include tablet {
-    display: none;
-  }
+		@include tablet { display: flex; }
+	}
+
+	&-sm {
+	  @include mobile { display: block; }
+
+	  @include tablet { display: none; }
+	}
+}
+
+.container-fluid .grid_12-xs {
+	@include mobile { width: 100%; }
+
+	@include tablet { width: auto; }
 }

@@ -1,0 +1,44 @@
+.sandwitch {
+  @include size(30px 15px);
+  position: fixed;
+  z-index: 20;
+
+  @include mobile {
+    top: 40px;
+    @include horizontal-center;
+  }
+
+  @include tablet {
+    top: 20px;
+    right: 20px;
+  }
+
+  .top, .middle, .bottom {
+    @include size(100% 2px);
+    background-color: $black;
+    position: absolute;
+    left: 0;
+    @include transition;
+  }
+
+  .top { top: 0; }
+
+  .middle { @include vertical-center; }
+
+  .bottom { bottom: 0; }
+
+  &.active {
+    .top {
+      top: 50%;
+      transform: rotate(45deg) translateY(-50%);
+    }
+
+    .middle { @include size(0 2px); }
+
+    .bottom {
+      top: 50%;
+      bottom: auto;
+      transform: rotate(-45deg) translateY(-50%);
+    }
+  }
+}
