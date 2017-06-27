@@ -14,7 +14,7 @@ mixin list-link(href, text, linkClass)
 
 mixin blocks(blocks)
 	each item in blocks
-		.grid_4.text-center.grid_12-xs
+		.grid_4.text-center
 			img(src=`${imgPath}${item.image}.png`)
 			h3.h3= item.heading
 			p= item.text

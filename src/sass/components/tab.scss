@@ -1,0 +1,29 @@
+.nav-tabs-justified {
+  border-bottom: 0;
+
+  & > li > a {
+    margin-right: 0;
+    border-radius: 4px;
+  }
+
+  & > .active > a,
+  & > .active > a:hover,
+  & > .active > a:focus { border: 1px solid #ddd; }
+
+  @include tablet {
+    & > li > a {
+      border-bottom: 1px solid #ddd;
+      border-radius: 4px 4px 0 0;
+    }
+
+    & > .active > a,
+    & > .active > a:hover,
+    & > .active > a:focus { border-bottom-color: #fff; }
+  }
+}
+
+.tab-content {
+  & > .tab-pane { display: none; }
+
+  & > .active { display: block; }
+}

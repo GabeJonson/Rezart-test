@@ -1,19 +1,21 @@
 include ../utils/_mixins
 
-header.container-fluid
-  .grid_6.grid_12-xs
-    a.logo(href='#')
-      i.fa.fa-rocket
-      span.text-uppercase colorful flat
-      
-  .grid_6.text-right
-    .sandwitch.hidden-sm
-      .top
-      .middle
-      .bottom
+header
+  .container-fluid
+    .grid_6
+      a.logo(href='#')
+        i.fa.fa-rocket
+        span.text-uppercase colorful flat
         
-    ul.nav.hidden-xs
-      +list-link('#', 'Home')
-      +list-link('#', 'Services')
-      +list-link('#', 'Portfolio')
-  
+    .grid_6.text-right
+      .sandwitch.hidden-sm
+        .top
+        .middle
+        .bottom
+          
+      ul.nav.hidden-xs
+        +list-link('#home', 'Home', 'smooth relative')
+        +list-link('#services', 'Services', 'smooth relative')
+        +list-link('#portfolio', 'Portfolio', 'smooth relative')
+        +list-link('#', '')(class='move-on-hover')
+    

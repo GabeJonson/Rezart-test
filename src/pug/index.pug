@@ -4,6 +4,7 @@ block title
   | COLORFUL FLAT
 
 block content
+  .progress-line
   .slider.owl-carousel
     -for(var i = 0; i < 3; i++)
       .item(style=`background-image: url(${imgPath}item.jpg)`)
@@ -12,24 +13,37 @@ block content
           p In has brute virtute, mundi facete perfecto ius ne. Cu tota evertitur necessitatibus nec. Ei quo rebum zril electram, accusata iracundia ei his. Ad qui recusabo deseruisse, cu per odio nihil. Eu vide mucius mei. Maiorum tractatos instructior ut eos, graece graecis vix an, consul impetus mediocrem an his. Possit pericula argumentum vix ex.
           a.btn.btn-white.text-uppercase.text-center(href='#') read more
           
-  .presentation.container-fluid
+  .presentation.container-fluid#services
     +blocks(blocks)
     
-  .recent
+  .recent#portfolio
     .container-fluid
       h2.h2.text-uppercase.text-center recent templates
       small.text-center Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. 
       
       .filter
-        .grid_12.text-container.text-center
+        ul#tabs.grid_12.text-container.text-center.nav-tabs
           each item, index in filter
             if index == 0
-              a.active.filter-item.text-uppercase(href=`#${item}`)= item
+              li.active
+                a(href=`#${item}`, data-toggle='tab')= item
             else
-              a.filter-item.text-uppercase(href=`#${item}`)= item
+              li
+                a(href=`#${item}`, data-toggle='tab')= item
               
-        .grid_12.filter-items-container
-          -for(var i = 1; i <= 6; i++)
-            +img(`filter_${i}.jpg`)
+        .tab-content.grid_12.filter-items-container
+          each item, index in filter
+            if index == 0
+              div(id= item).tab-pane.active
+                .tab-pane-container
+                  -for(var i = 1; i <= 6; i++)
+                    a.relative(href=`${imgPath}filter_${i}.jpg`, data-fancybox="images")
+                      +img(`filter_${i}.jpg`)(class='responsive-image')
+            else 
+              div(id= item).tab-pane
+                .tab-pane-container
+                  -for(var i = 1; i <= 6; i++)
+                    a.relative(href=`${imgPath}filter_${i}.jpg`, data-fancybox="images")
+                      +img(`filter_${i}.jpg`)(class='responsive-image')
         
       a.btn.btn-white.text-uppercase.text-center(href='#') show more

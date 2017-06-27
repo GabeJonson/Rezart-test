@@ -4,6 +4,13 @@
 	box-sizing: border-box;
 }
 
+input, button, a {
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+}
+
 li { list-style: none; }
 
 a { text-decoration: none; }
@@ -42,8 +49,10 @@ figure { margin: 0; }
 	}
 }
 
-.container-fluid .grid_12-xs {
-	@include mobile { width: 100%; }
-
-	@include tablet { width: 33.33333%; }
+.progress-line {
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+	z-index: 5;
 }
